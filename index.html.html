@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전략 보고서: 지속 가능한 수익 성장을 위한 로드맵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --mck-navy: #051C2C;
+            --mck-blue: #00A9E0;
+            --mck-light-blue: #E6F4FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A4A4A;
+            --border-light: #E0E0E0;
+            --bg-light: #F9FAFB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--mck-navy);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--mck-blue);
+        }
+
+        /* Hero Section */
+        header {
+            padding: 180px 50px 100px;
+            background-color: var(--mck-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .kicker {
+            color: var(--mck-blue);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .summary-box {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 120px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            border-left: 5px solid var(--mck-blue);
+            padding-left: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--mck-navy);
+            margin-bottom: 10px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-top: 4px solid var(--mck-navy);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--mck-navy);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--text-gray);
+        }
+
+        .card li::before {
+            content: "■";
+            color: var(--mck-blue);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 10px;
+        }
+
+        /* Strategy Detail Styling */
+        .strategy-block {
+            background: white;
+            border: 1px solid var(--border-light);
+            padding: 40px;
+            height: 100%;
+        }
+
+        .strategy-block h4 {
+            color: var(--mck-blue);
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .strategy-block h3 {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        /* Outcome Table */
+        .outcome-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .outcome-table th {
+            background: var(--mck-navy);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .outcome-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 16px;
+        }
+
+        .outcome-table tr:last-child td {
+            background: var(--mck-light-blue);
+            font-weight: 700;
+            color: var(--mck-navy);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            padding: 60px 50px;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .highlight-text {
+            color: var(--mck-blue);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            header h1 { font-size: 32px; }
+            nav { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">STRATEGIC GROWTH</div>
+        <div class="nav-links">
+            <a href="#summary">Executive Summary</a>
+            <a href="#growth">Profitable Growth</a>
+            <a href="#launch">Execution</a>
+            <a href="#culture">Synergy</a>
+            <a href="#outcome">Outcomes</a>
+        </div>
+    </nav>
+
+    <header id="summary">
+        <span class="kicker">Mckinsey Style Strategy Report</span>
+        <h1>규율 있는 실행과 실무형 리더십을 통한<br>지속 가능한 수익 성장 가속화</h1>
+        <div class="summary-box">
+            <p>본 전략 로드맵은 혁신적인 제품 포트폴리오 강화, 운영 효율성 극대화, 그리고 단일 조직 문화를 통해 
+            린(Lean) 조직 체제하에서 성장을 달성하고 구조적인 수익성을 개선하기 위한 구체적인 실행 방안을 담고 있습니다.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Executive Summary Grid -->
+        <section>
+            <div class="section-header">
+                <h2>전략적 4대 핵심 기둥</h2>
+                <p>Delivering Sustainable & Profitable Growth</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fa-solid fa-chart-line" style="font-size: 30px; color: var(--mck-blue); margin-bottom: 20px;"></i>
+                    <h3>1. 수익 중심 성장 엔진</h3>
+                    <ul>
+                        <li>신제품 지속 출시 및 약가 승인 가속화</li>
+                        <li>초희귀 질환 자산의 한국 주도 라이선스 도입</li>
+                        <li>비급여 판매를 통한 조기 매출 확보</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-rocket" style="font-size: 30px; color: var(--mck-blue); margin-bottom: 20px;"></i>
+                    <h3>2. 출시 실행의 탁월성</h3>
+                    <ul>
+                        <li>범기능적(Cross-functional) 출시 거버넌스</li>
+                        <li>조기 시장 접근성 및 가이드라인 선점</li>
+                        <li>임상 연구자 협력을 통한 신속한 채택</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-shield-halved" style="font-size: 30px; color: var(--mck-blue); margin-bottom: 20px;"></i>
+                    <h3>3. 실무형 리더십 (Lean)</h3>
+                    <ul>
+                        <li>GM의 운영 및 현장 실행 직접 참여</li>
+                        <li>디지털 도구 및 파트너 자산 활용 극대화</li>
+                        <li>프로젝트 기반 코칭 및 역량 강화</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Profitable Growth Details -->
+        <section id="growth">
+            <div class="section-header">
+                <h2>수익성 강화 전략 상세</h2>
+                <p>Accelerating Revenue while Strengthening the Bottom Line</p>
+            </div>
+            <div class="grid-2">
+                <div class="strategy-block">
+                    <h4>Top-line Growth</h4>
+                    <h3>매출 확대 가속화</h3>
+                    <ul>
+                        <li>재난적 의료비 지원 사업 등을 활용한 비급여 매출 극대화</li>
+                        <li>47개 주요 병원 랜딩 완료 및 신규 처방 가속화</li>
+                        <li>제품별 비즈니스 모델 재검토 및 유통 파트너 최적화</li>
+                    </ul>
+                </div>
+                <div class="strategy-block">
+                    <h4>Bottom-line Growth</h4>
+                    <h3>구조적 이익 개선</h3>
+                    <ul>
+                        <li>GM 주도의 강력한 비용 규율 (비용 지출 문화 혁신)</li>
+                        <li>고정비 구조(인건비, 임대료 등) 최적화 및 효율화</li>
+                        <li>AI 도구의 적극 도입을 통한 외부 대행비 최소화</li>
+                        <li>운전 자본(DSO, 재고 관리) 최적화</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Launch & Culture -->
+        <section id="launch">
+            <div class="section-header">
+                <h2>실행 거버넌스 및 통합 문화</h2>
+                <p>Excellence in Execution & One Organization</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>출시 거버넌스 (Launch Excellence)</h3>
+                    <p style="margin-bottom: 20px; font-size: 14px;">기능별/공통 KPI 정렬 및 주간 단위 Follow-up 체계 구축</p>
+                    <ul>
+                        <li>의학회와의 협업을 통해 표준 치료법(SoC) 가이드라인 내 제품 포지셔닝</li>
+                        <li>국제팀과의 시나리오 기반 P&R 커뮤니케이션</li>
+                        <li>현장 경험 공유를 위한 임상 연구자 자문단 운영</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>단일 조직 시너지 (One Culture)</h3>
+                    <p style="margin-bottom: 20px; font-size: 14px;">BU 간 장벽을 허무는 보상 체계 및 조직 문화 통합</p>
+                    <ul>
+                        <li>"Rule of 7"을 활용한 타운홀, 뉴스레터 등 다각도 통합 메시지 전달</li>
+                        <li>직원 KPI의 10%를 BU 간 협업 지표로 할당</li>
+                        <li>비즈니스 플랜 내 BU 간 시너지(비용 절감 및 매출 증대) 정량화</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Outcome Table -->
+        <section id="outcome">
+            <div class="section-header">
+                <h2>기대 효과 및 요약</h2>
+                <p>Measurable Value & Strategic Impact</p>
+            </div>
+            <table class="outcome-table">
+                <thead>
+                    <tr>
+                        <th>구분 (Pillars)</th>
+                        <th>핵심 성과 (Key Outcomes)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>매출 성장 가속화</strong></td>
+                        <td>지속적 출시, 조기 급여 확대 및 한국 주도 파이프라인 개발을 통한 외형 성장</td>
+                    </tr>
+                    <tr>
+                        <td><strong>수익성 구조 개선</strong></td>
+                        <td>AI 활용 효율화, 고정비 최적화 및 규율 있는 비용 관리를 통한 마진 강화</td>
+                    </tr>
+                    <tr>
+                        <td><strong>시너지 및 거버넌스</strong></td>
+                        <td>통합된 고객 커버리지 및 정렬된 인센티브 체계를 통한 운영 시너지 극대화</td>
+                    </tr>
+                    <tr>
+                        <td><strong>린 운영 모델</strong></td>
+                        <td>실무형 리더십과 디지털 도구를 활용한 작지만 강한 에필리에이트 모델 확립</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bottom Line</strong></td>
+                        <td>성장 가속화, 수익성 개선, 그리고 지속 가능한 가치를 전달하는 실행 중심 모델</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Strategic Planning Division. Confidential & Proprietary.</p>
+        <p style="margin-top: 10px; font-size: 13px;">이 보고서는 규율 있는 실행과 실무형 리더십을 통한 성장을 목표로 합니다.</p>
+    </footer>
+
+</body>
+</html>
+
+
+### 디자인 및 구성 특징:
+
+1.  **맥킨지 스타일 아이덴티티**:
+    *   **Navy & Blue**: 맥킨지의 상징적인 네이비와 밝은 블루 컬러를 사용하여 전문성과 신뢰감을 주었습니다.
+    *   **Typography**: 'Noto Sans KR'을 기반으로 하여 가독성을 높이고, 헤드라인에는 세리프 폰트를 일부 섞어 컨설팅 보고서 특유의 고급스러움을 더했습니다.
+2.  **구조화된 정보 전달**:
+    *   **Hero Section**: 전체 전략의 핵심 메시지(Kicker)를 가장 먼저 보여줍니다.
+    *   **Card & Grid**: 텍스트 위주의 내용을 카드 형태로 분리하여 시각적 피로도를 낮추고 핵심 포인트가 눈에 띄게 배치했습니다.
+    *   **정량적 요약**: 마지막 섹션에 테이블을 배치하여 경영진이 전체 성과를 한눈에 파악할 수 있도록 했습니다.
+3.  **한국어 최적화**:
+    *   원문에서 제공된 전문 용어(P&R, MOQ, BU 등)와 한국어 설명을 조화롭게 배치하여 비즈니스 맥락이 정확히 전달되도록 구성했습니다.
+
+브라우저에서 이 HTML 파일을 열어보시면, 실제 웹사이트처럼 부드러운 레이아웃과 함께 전문적인 보고서 내용을 확인하실 수 있습니다. 추가적인 수정 사항이 있으시면 말씀해 주세요!
